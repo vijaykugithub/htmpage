@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-	<title>Sales Process Automation </title>
+	<title>Kovid Tracker </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -10,18 +10,18 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<script src="data/data.js"></script>
+	<script type="text/javascript" src="js/mainApp.js"></script>
+	<!--<script src="data/data.js"></script>-->
 
 	<!-- <link rel="stylesheet" href="css/font.css"> -->
-	<script type="text/javascript" src="js/mainApp.js"></script>
 </head>
-<body ng-app="opportunityApp">
+<body ng-app="opportunityApp"  ng-controller="OpportunityCtrl">
 	<div class="container-fluid pdlr0">
 
         <header>
 		 <div class="header_left">
-			<img src="images/honeywell_logo.png"/>
-			<h2>Sales Process Automation</h2>
+			<img src="images/covid.jpg"style="width: 100px;height: 40px;"/>
+			<h2>Covid Tracker</h2>
 		 </div>
 		 <div class="header_right">
 			<ul>
@@ -32,27 +32,33 @@
 		</header>
 
 
-		<div class="main_content" ng-controller="OpportunityCtrl">
+		<div class="main_content">
 
 			<div class="table_container table-responsive">
 
 				<table class="table table-hover table-bordered">
 				<thead>
 				  <tr>
-					<th>Opportunity</th>
-					<th>Opportunity Name</th>
-					<th>Status</th>
-					<th>Approvals</th>
-					<th>Details</th>
+					<th>Country</th>
+					<th>Total Cases</th>
+					<th>Total Recovered</th>
+					<th>Total Unresolved</th>
+					<th>Total Deaths</th>
+					<th>Total New Cases Today</th>
+					<th>Total New Deaths Today</th>
 				  </tr>
 				</thead>
-				<tbody ng-repeat="data in opportunityListData">
+				<tbody ng-repeat="data in covidData">
 				  <tr >
-					<td>{{data.Opportunity}}</td>
-					<td>{{data.OpportunityName}}</td>
-					<td>{{data.Status}}</td>
-					<td><button type="button" class="btn btn-approval" id="approval1">{{data.Approvals}}</button></td>
-					<td><button type="button" class="btn btn-approval">{{data.Details}}</button></td>
+					<td>{{data.title}}</td>
+					<td>{{data.total_cases}}</td>
+					<td>{{data.total_recovered}}</td>
+					<td>{{data.total_unresolved}}</td>
+					<td>{{data.total_deaths}}</td>
+					<td>{{data.total_new_cases_today}}</td>
+					<td>{{data.total_new_deaths_today}}</td>
+					<!-- <td><button type="button" class="btn btn-approval" id="approval1">{{data.Approvals}}</button></td>
+				<td><button type="button" class="btn btn-approval">{{data.Details}}</button></td> -->
 				  </tr>
 				</tbody>
 			  </table>
