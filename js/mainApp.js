@@ -6,7 +6,7 @@ app.controller("OpportunityCtrl", function($scope,$http) {
     
     $http({
         method: 'GET',      
-        url: 'http://localhost:61350/api/Opportunity/GetCovidData'            
+        url: 'https://hbsspadev.azurewebsites.net/api/Opportunity/GetCovidData'            
         }).then(function success(response) {
         $scope.covidData = response.data;     
         $scope.statusval = response.status;       
