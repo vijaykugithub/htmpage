@@ -20,118 +20,28 @@
 	<!-- <link rel="stylesheet" href="css/font.css"> -->
 </head>
 <body ng-app="opportunityApp"  ng-controller="OpportunityCtrl">
-	<div class="container-fluid pdlr0">
+<div class="container">
+	<div class="jumbotron">
+		<h3 class="text-center"> Covid-19 App</h3>
+		<p>covid app application</p> 
+	</div>
+	 <div class="row">
+    <div class="col-md-4">
+	    <div class="card">
+		    <div class="card-body">
+			    <h3>confirm cases</h3>
+			    <h3>{{all_data.confirmed}}</h3>
+		    </div>
+	    </div>
+	    </div>
+	    </div>
+  </div>
+	
+	
+	
+	
+	</div>
 
-        <header>
-		 <div class="header_left">
-			<img src="images/covid.jpg"style="width: 100px;height: 40px;"/>
-			<h2>Covid Tracker</h2>
-		 </div>
-		 <div class="header_right">
-			<ul>
-				<li><a href="https://vijaykugithub.github.io/htmpage/home.html">Home</a></li>
-				<li><a href="https://vijaykugithub.github.io/htmpage/logout.html">Logout</a></li>
-			</ul>
-		 </div>
-		</header>
-
-
-		<div class="main_content">
-
-			<div class="table_container">
-                         <div id="dtBasicExample_wrapper" class="dataTables_wrapper dt-bootstrap4">
-				<table class="table table-striped table-bordered" cellspacing="0" width="100%">
-				<thead>
-				  <tr>
-					<th>Country</th>
-					<th>Total Cases</th>
-					<th>Total Recovered</th>
-					<th>Total Unresolved</th>
-					<th>Total Deaths</th>
-					<th>Total New Cases Today</th>
-					<th>Total New Deaths Today</th>
-				  </tr>
-				</thead>
-				<tbody ng-repeat="data in covidData | filter: searchKeyword">
-				  <tr >
-					<td>{{data.title}}</td>
-					<td>{{data.total_cases}}</td>
-					<td>{{data.total_recovered}}</td>
-					<td>{{data.total_unresolved}}</td>
-					<td>{{data.total_deaths}}</td>
-					<td>{{data.total_new_cases_today}}</td>
-					<td>{{data.total_new_deaths_today}}</td>
-					<!-- <td><button type="button" class="btn btn-approval" id="approval1">{{data.Approvals}}</button></td>
-				<td><button type="button" class="btn btn-approval">{{data.Details}}</button></td> -->
-				  </tr>
-				</tbody>
-			  </table>
-</div>
-            </div>
-
-			<div class="approval_container">
-
-			   <div class="functional_approval">
-
-					<h2>Functional Approvals</h2>
-					<ul>
-						<li class="approved">Sales</li>
-						<li>Operating System</li>
-						<li>Finance</li>
-						<li>Legal</li>
-						<li>Supply Chains</li>
-
-					</ul>
-
-			   </div>
-			   <div class="sea_approval">
-
-					<h2>SEA Approvals</h2>
-					<ul>
-						<li>L1</li>
-						<li>L2</li>
-						<li>L3</li>
-						<li>L4</li>
-						<li>L5</li>
-					</ul>
-
-			   </div>
-
-			</div>
-
-
-		</div>
-
-
-		<footer><div>© 2019-2020. All Rights Reserved Vijay Kumar </div>
-		</footer>
-
-
-
-</div>
-
-<script>
-    $(document).ready(function()
-	{
-		$(document).on("click", "#approval1", function()
-		{
-		$('.approval_container').fadeIn(1000);
-		});
-
-		var main_contentheight = $('body').innerHeight() - $('header').innerHeight() - $('footer').innerHeight() - 60;
-		$('.main_content').css("height", main_contentheight);
-
-		$(window).resize(function()
-		{
-		var main_contentheight = $('body').innerHeight() - $('header').innerHeight() - $('footer').innerHeight() - 60;
-		$('.main_content').css("height", main_contentheight);
-
-		});
-
-	});
-
-
-</script>
 
 </body>
 </html>
