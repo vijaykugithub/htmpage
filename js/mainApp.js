@@ -25,16 +25,11 @@ app.controller("OpportunityCtrl", function($scope,$http) {
             $scope.c_data=undefined;
             return;
         }
-        $http({
-        method: 'GET',      
-        url:  '${urlA}/countries/${country}'           
-        }).then(function success(response) {
-        $scope.all_data = response.data;     
-        $scope.statusval = response.status;       
-        $scope.statustext = response.statusText;      
-        $scope.headers = response.headers();      
+        $http.get('${urlA}/countries/${country}')
+        .then(function success(response) {
+        $scope.c_data = response.data;          
         }, function error(response) { 
-            console.log("some thing happen on the server.");       
+            console.log("some thing happen on the server.");  
         });
     }
 });
