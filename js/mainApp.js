@@ -21,7 +21,7 @@ app.controller("OpportunityCtrl", function($scope,$http) {
     $scope.myFunc = function() 
     {
         let country=$scope.c;
-        if(country==null)
+        if(country==null || country=="")
         {
             $scope.c_data=undefined;
             return;
