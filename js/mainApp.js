@@ -17,7 +17,7 @@ app.controller("OpportunityCtrl", function($scope,$http) {
             console.log("some thing happen on the server.");       
         });
     
-    $scope.get_C_Data=function()
+    $scope.myFunc = function() 
     {
         let country=$scope.c;
         if(country==null)
