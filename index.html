@@ -4,16 +4,14 @@
 	<title>Kovid Tracker </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+	<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">	
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/font.css">
 	<script type="text/javascript" src="js/mainApp.js"></script>
 	<!--<script src="data/data.js"></script>-->
 
@@ -21,25 +19,70 @@
 </head>
 <body ng-app="opportunityApp"  ng-controller="OpportunityCtrl">
 <div class="container">
-	<div class="jumbotron">
+	<div class="jumbotron py-3">
 		<h3 class="text-center"> Covid-19 App</h3>
 		<p>covid app application</p> 
 	</div>
-	 <div class="row">
+	 <div class="row text-center">
     <div class="col-md-4">
-	    <div class="card">
+	    <div class="card bg-warning text-white">
 		    <div class="card-body">
 			    <h3>confirm cases</h3>
-			    <h3>{{all_data.confirmed.value}}</h3>
+			    <h2>{{all_data.confirmed.value}}</h2>
 		    </div>
 	    </div>
 	    </div>
+		 
+		 <div class="col-md-4">
+	    <div class="card bg-orange text-white">
+		    <div class="card-body">
+			    <h3>confirm recovered</h3>
+			    <h2>{{all_data.recovered.value}}</h2>
+		    </div>
 	    </div>
-  </div>
-	
-	
-	
-	
+	    </div>
+		 
+		 <div class="col-md-4">
+	    <div class="card bg-danger text-white">
+		    <div class="card-body">
+			    <h3>confirm deaths</h3>
+			    <h2>{{all_data.deaths.value}}</h2>
+		    </div>
+	    </div>
+	    </div>
+		 	    </div>
+		 <input type="text" class="form-control mt-4" placeholder="enter country here" ng-model="c" ng-change="get_C_Data()"/>
+	<div class="container-fluid" ng-if="c_data">
+	<div class="text-center mt-4 text-uppercase">{{c}} Status</div>
+		  <div class="row text-center mt-4" >
+    <div class="col-md-4">
+	    <div class="card bg-warning text-white">
+		    <div class="card-body">
+			    <h3>confirm cases</h3>
+			    <h2>{{c_data.confirmed.value}}</h2>
+		    </div>
+	    </div>
+	    </div>
+		 
+		 <div class="col-md-4">
+	    <div class="card bg-orange text-white">
+		    <div class="card-body">
+			    <h3>confirm recovered</h3>
+			    <h2>{{c_data.recovered.value}}</h2>
+		    </div>
+	    </div>
+	    </div>
+		 
+		 <div class="col-md-4">
+	    <div class="card bg-danger text-white">
+		    <div class="card-body">
+			    <h3>confirm deaths</h3>
+			    <h2>{{c_data.deaths.value}}</h2>
+		    </div>
+	    </div>
+	    </div>
+		 	    </div>
+	</div>
 	</div>
 
 
