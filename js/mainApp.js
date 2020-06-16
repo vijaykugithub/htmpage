@@ -33,5 +33,5 @@ app.controller("OpportunityCtrl", function($scope,$http) {
         $scope.headers = response.headers();      
         }, function error(response) { 
             console.log("some thing happen on the server.");       
-        });
+        }
 });
