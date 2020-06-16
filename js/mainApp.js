@@ -1,3 +1,4 @@
+var urlA="https://covid19.mathdro.id/api";
 var app= angular.module("opportunityApp",[]);
 
 app.controller("OpportunityCtrl", function($scope,$http) {
@@ -6,9 +7,9 @@ app.controller("OpportunityCtrl", function($scope,$http) {
     
     $http({
         method: 'GET',      
-        url: 'https://hbsspadev.azurewebsites.net/api/Opportunity/GetCovidData'            
+        url:  urlA           
         }).then(function success(response) {
-        $scope.covidData = response.data;     
+        $scope.all_data = response.data;     
         $scope.statusval = response.status;       
         $scope.statustext = response.statusText;      
         $scope.headers = response.headers();      
